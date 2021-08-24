@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1068054810521",
+    "project_id": "quiz-ui-95806",
+    "storage_bucket": "quiz-ui-95806.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068054810521:android:c8cf5ea4d23e79908acd08",
+        "android_client_info": {
+          "package_name": "io.voyager.quiz_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068054810521-2kunsa2hare0kfb6lgbuecn2il9undba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYJD3PmHXYt-TLrhEigNZKGKoa0NBNq88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068054810521-2kunsa2hare0kfb6lgbuecn2il9undba.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
