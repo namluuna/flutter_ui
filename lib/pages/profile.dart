@@ -3,19 +3,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quiz_ui/pages/login_page.dart';
+import 'package:quiz_ui/widgets/bottom_bar.dart';
+import 'package:quiz_ui/widgets/user_menu_bar.dart';
 
 class ProfilePage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Scaffold( 
+    bottomNavigationBar: BottomBar(),
+    body : SingleChildScrollView(
       
       padding: EdgeInsets.symmetric(vertical: 20),
+      child: Material (
+        color: Colors.white70,
       child: Column(
+        
         children: [
-          
-          ProfilePic(),
-          SizedBox(height: 20),
+          SizedBox(height: 30,),
+          // ProfilePic(),
+          UserMenuBar(),
+          SizedBox(height: 50),
           ProfileMenu(
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
@@ -41,12 +49,14 @@ class ProfilePage extends StatelessWidget {
             icon: "assets/icons/Log out.svg",
             press: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
-      
+
             },
+            
           ),
+          SizedBox(height: 100,)
         ],
       ),
-    );
+    )));
   }
 }
 
@@ -64,8 +74,8 @@ class ProfileMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: FlatButton(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 7),
+      child: OutlineButton(
         padding: EdgeInsets.all(20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Color(0xFFF5F6F9),
@@ -87,41 +97,41 @@ class ProfileMenu extends StatelessWidget {
   }
 }
 
-class ProfilePic extends StatelessWidget {
-  const ProfilePic({
-    Key key,
-  }) : super(key: key);
+// class ProfilePic extends StatelessWidget {
+//   const ProfilePic({
+//     Key key,
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 115,
-      width: 115,
-      child: Stack(
-        fit: StackFit.expand,
-        overflow: Overflow.visible,
-        children: [
-          CircleAvatar(
-          ),
-          Positioned(
-            right: -16,
-            bottom: 0,
-            child: SizedBox(
-              height: 46,
-              width: 46,
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
-                  side: BorderSide(color: Colors.white),
-                ),
-                color: Color.fromRGBO(255, 99, 128, 1.0),
-                onPressed: () {},
-                child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       height: 115,
+//       width: 115,
+//       child: Stack(
+//         fit: StackFit.expand,
+//         overflow: Overflow.visible,
+//         children: [
+//           CircleAvatar(
+//           ),
+//           Positioned(
+//             right: -16,
+//             bottom: 0,
+//             child: SizedBox(
+//               height: 46,
+//               width: 46,
+//               child: FlatButton(
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(50),
+//                   side: BorderSide(color: Colors.white),
+//                 ),
+//                 color: Color.fromRGBO(255, 99, 128, 1.0),
+//                 onPressed: () {},
+//                 child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
+//               ),
+//             ),
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }

@@ -5,7 +5,9 @@ import 'package:quiz_ui/constants.dart';
 import 'package:quiz_ui/pages/login_page.dart';
 import 'package:quiz_ui/pages/makequiz_page.dart';
 import 'package:quiz_ui/pages/profile.dart';
+import 'package:quiz_ui/pages/user_quiz.dart';
 import 'package:quiz_ui/widgets/border_text_field.dart';
+import 'package:quiz_ui/widgets/bottom_bar.dart';
 import 'package:quiz_ui/widgets/course_card.dart';
 import 'package:quiz_ui/widgets/instructor_card.dart';
 import 'package:quiz_ui/widgets/topics_list.dart';
@@ -21,44 +23,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        onTap: onTabTapped, // new
-       currentIndex: _currentIndex,
-        unselectedIconTheme: IconThemeData(
-          color: Color.fromRGBO(202, 205, 219, 1),
-        ),
-        selectedIconTheme: IconThemeData(
-          color: Constants.primaryColor,
-        ),
-        items: [
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(FlutterIcons.home_fea),
-            
-          ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(
-              FlutterIcons.calendar_fea,
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(
-              FlutterIcons.edit_fea,
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: Icon(
-              FlutterIcons.user_fea,
-            ),
-            
-          ),
-        ],
-      ), 
+      bottomNavigationBar: BottomBar(), 
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
@@ -160,6 +125,7 @@ class _DashboardState extends State<Dashboard> {
                     fontSize: 21.0,
                     color: Constants.primaryTextColor,
                     fontWeight: FontWeight.w600,
+ 
                   ),
                 ),
                 SizedBox(height: 10.0),
@@ -188,25 +154,5 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  void onTabTapped(int value) {
-    switch (value) {
-      case 0:{
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()));
-        break;
-      }  
-      case 1:{
-        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
-        break;
-      }    
-      case 2:{
-        Navigator.push(context, MaterialPageRoute(builder: (context) => MakeQuiz()));
-        break;
-      } 
-      case 3:{
-        Navigator.push(context, MaterialPageRoute(builder: (context) =>ProfilePage() ));
-        break;
-      } 
-      default:
-    }
-  }
+  
 }
